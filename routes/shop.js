@@ -2,8 +2,14 @@ const express = require('express');
 
 const router = express.Router();
 
+const { products } = require('./admin');
+
 router.get('/', (req, res) => {
-  res.send('<h1>Hello from Express!</h1>');
+  res.render('shop', {
+    prods: products,
+    pageTitle: 'Shop',
+    path: '/',
+  });
 });
 
 module.exports = router;
